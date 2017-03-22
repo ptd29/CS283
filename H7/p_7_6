@@ -1,0 +1,8 @@
+Symbol  swap.o .symtab entry?   Symbol Type Module where defined    Section
+buf     no                      external    unknown                 .rel.data
+bufp0   yes                     global      swap.o                  .data
+bufp1   yes                     local       swap.o                  n/a
+swap    yes                     global      swap.o                  .data
+temp    no                      local       swap.o                  n/a
+incr    yes                      external    unknown                 .symtab
+count   no                      local       swap.o                     n/a

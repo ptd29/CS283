@@ -1,0 +1,24 @@
+
+==29228== Command: ./v06
+==29228==
+==29228== Conditional jump or move depends on uninitialised value(s)
+==29228==    at 0x400535: foo (in /home/jpg77/systems_cs_283/L2/valgrind/v06)
+==29228==    by 0x40055A: main (in /home/jpg77/systems_cs_283/L2/valgrind/v06)
+==29228==
+x is less than 10
+==29228==
+==29228== HEAP SUMMARY:
+==29228==     in use at exit: 0 bytes in 0 blocks
+==29228==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==29228==
+==29228== All heap blocks were freed -- no leaks are possible
+==29228==
+==29228== For counts of detected and suppressed errors, rerun with: -v
+==29228== Use --track-origins=yes to see where uninitialised values come from
+==29228== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+jpg77@tux1:~/systems_cs_283/L2/valgrind$ vim v06.c
+jpg77@tux1:~/systems_cs_283/L2/valgrind$ vim readme.txt
+jpg77@tux1:~/systems_cs_283/L2/valgrind$ vim readme.txt
+jpg77@tux1:~/systems_cs_283/L2/valgrind$ ls -la
+total 76
+

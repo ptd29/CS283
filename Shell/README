@@ -1,0 +1,13 @@
+Jason Gallagher
+Final Project - shell client
+CS-283 - systems programming
+
+Description:
+This application is a linux shell implementation that manages user processes
+and allows for running system commands and executatbles in a linux environmnet.
+
+To build:
+    make
+To run:
+    ./tsh
+

@@ -1,0 +1,67 @@
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc -o g1 g1.c -g
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gdb g1
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from g1...done.
+(gdb) start
+Temporary breakpoint 1 at 0x40061e: file g1.c, line 7.
+Starting program: /home/jpg77/systems_cs_283/L2/gdb/g1
+
+Temporary breakpoint 1, main () at g1.c:7
+7         c = fgetc (stdin) ;
+(gdb) next
+1
+8         while (c != EOF)
+(gdb) step
+9         if (isalnum (c) )
+(gdb) step
+__ctype_b_loc () at ../include/ctype.h:38
+38      ../include/ctype.h: No such file or directory.
+(gdb) next
+39      in ../include/ctype.h
+(gdb) next
+main () at g1.c:10
+10         printf ("%c\n", c) ;
+(gdb) next
+1
+8         while (c != EOF)
+(gdb) step
+9         if (isalnum (c) )
+(gdb) step
+__ctype_b_loc () at ../include/ctype.h:38
+38      ../include/ctype.h: No such file or directory.
+(gdb) next
+39      in ../include/ctype.h
+(gdb) next
+main () at g1.c:10
+10         printf ("%c\n", c) ;
+(gdb) next
+1
+8         while (c != EOF)
+(gdb) next
+9         if (isalnum (c) )
+(gdb) next
+10         printf ("%c\n", c) ;
+(gdb) Quit
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) quit
+A debugging session is active.
+
+        Inferior 1 [process 41383] will be killed.
+
+        Quit anyway? (y or n) y
+        jpg77@tux5:~/systems_cs_283/L2/gdb$
+

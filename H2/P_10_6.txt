@@ -1,0 +1,17 @@
+Jason Gallagher
+CS 283 - Systems Programming
+HW 2
+Problem 10.6
+
+Assuming block addresses start at 0x00 byte address
+
+request     Block Size (decimal bytes)          Block header (hex)
+malloc(1)   8 Bytes ((1+4) bytes rounded up)    0x09    (8 + 1)
+malloc(5)   16 Bytes (5+4 bytes rounded up)     0x11    (16 + 1)
+malloc(12)  16 Bytes (12+4 bytes)               0x11    (16 + 1)    
+malloc(13)  24 Bytes (13+4 bytes rounded up)    0x19    (24 + 1)
+
+Each byte allocated by malloc also has a 4 byte header, hence malloc(1) is
+actually 1 byte + 4 byte header = 5 bytes which is then rounded to 8 bytes
+as per the problem instructions.
+The block header is the block size + 1 byte.

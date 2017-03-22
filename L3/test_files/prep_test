@@ -1,0 +1,10 @@
+rm -r a/* b/*
+cp ./test_files/test_file1_in_a ./a/
+cp ./test_files/test_file1_in_b ./b/
+cp ./test_files/test_file2_in_a ./a/
+cp ./test_files/testfile_in_both ./a/
+cp ./test_files/testfile_in_both ./b/
+
+echo "this is the a file" >> ./a/testfile_in_both
+echo "This is the b file updated second" >> ./b/testfile_in_both
+

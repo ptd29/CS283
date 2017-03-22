@@ -1,0 +1,105 @@
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc -o g2 g2.c -g
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gdb g2
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from g2...done.
+(gdb) start
+Temporary breakpoint 1 at 0x4005fe: file g2.c, line 8.
+Starting program: /home/jpg77/systems_cs_283/L2/gdb/g2
+
+Temporary breakpoint 1, main () at g2.c:8
+8         num = 1 << 31;
+(gdb) next
+9         buf = malloc(num) ;
+(gdb) next
+10        fgets (buf, 1024, stdin) ;
+(gdb) next
+a
+
+Program received signal SIGSEGV, Segmentation fault.
+__GI__IO_getline_info (fp=fp@entry=0x7ffff7dd18e0 <_IO_2_1_stdin_>, buf=buf@entry=0x0,
+    n=1022, delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0)
+        at iogetline.c:77
+        77      iogetline.c: No such file or directory.
+        (gdb) exit
+        Undefined command: "exit".  Try "help".
+        (gdb) q
+        A debugging session is active.
+
+                Inferior 1 [process 41499] will be killed.
+
+
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc -o g2 g2.c -g
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gdb g2
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from g2...done.
+(gdb) start
+Temporary breakpoint 1 at 0x4005fe: file g2.c, line 8.
+Starting program: /home/jpg77/systems_cs_283/L2/gdb/g2
+
+Temporary breakpoint 1, main () at g2.c:8
+8         num = 1 << 31;
+(gdb) next
+9         buf = (char*) malloc(num) ;
+(gdb) print num
+$1 = -2147483648
+(gdb) contineu
+Undefined command: "contineu".  Try "help".
+(gdb) continue
+Continuing.
+a
+
+Program received signal SIGSEGV, Segmentation fault.
+__GI__IO_getline_info (fp=fp@entry=0x7ffff7dd18e0 <_IO_2_1_stdin_>, buf=buf@entry=0x0,
+    n=1022, delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0)
+        at iogetline.c:77
+        77      iogetline.c: No such file or directory.
+        (gdb) q
+        A debugging session is active.
+
+                Inferior 1 [process 41791] will be killed.
+
+                Quit anyway? (y or n) y
+                jpg77@tux5:~/systems_cs_283/L2/gdb$
+Program received signal SIGSEGV, Segmentation fault.
+__GI__IO_getline_info (fp=fp@entry=0x7ffff7dd18e0 <_IO_2_1_stdin_>, buf=buf@entry=0x0,
+    n=1022, delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0)
+        at iogetline.c:77
+        77      iogetline.c: No such file or directory.
+        (gdb) bt
+        #0  __GI__IO_getline_info (fp=fp@entry=0x7ffff7dd18e0 <_IO_2_1_stdin_>, buf=buf@entry=0x0,
+            n=1022, delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0)
+                at iogetline.c:77
+                #1  0x00007ffff7a7cd78 in __GI__IO_getline (fp=fp@entry=0x7ffff7dd18e0 <_IO_2_1_stdin_>,
+                    buf=buf@entry=0x0, n=<optimized out>, delim=delim@entry=10,
+                        extract_delim=extract_delim@entry=1) at iogetline.c:34
+                        #2  0x00007ffff7a7bb7d in _IO_fgets (buf=0x0, n=<optimized out>,
+                            fp=0x7ffff7dd18e0 <_IO_2_1_stdin_>) at iofgets.c:53
+                            #3  0x000000000040062e in main () at g2.c:10
+                            (gdb)
+

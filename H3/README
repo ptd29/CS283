@@ -1,0 +1,35 @@
+Jason Gallagher
+CS-283 Systems Programming
+2/17/2016
+H3
+
+Problem 1:
+The first step was writing the code to print the request header and content to the
+console. After I did this, I was able to examine the header of a web request I created
+to find the http version used by the browser. After examinination of output_part1.txt
+I determined that the version was HTTP/1.1 .
+To run:
+in H3 folder run make:
+make 
+
+
+Problem 2:
+I extended tiny to respond with a video file if the request uri is 
+/cgi-bin/centaur_serv.cgi . The web page will prompt to accept a download of
+centaur_serv.cgi, this is actually the mpg video file and when you change the 
+filetype to .mpg you can watch the video. Also, after the file download starts the 
+server shuts down. I was unable to determine the cause.
+
+To use:
+# Make tiny.c
+make
+
+#Make centaur_serv.cgi, this is the file that contains the video serving logic
+cd /cgi-bin/
+make
+
+Problem 3:
+In this problem I modified the static server code to use malloc and rio_read 
+instead of Mmap. The changes can be seen between lines 159 to 173.
+
+

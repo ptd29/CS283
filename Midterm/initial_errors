@@ -1,0 +1,39 @@
+gcc -o q1 q1.c
+q1.c: In function 'main':
+    q1.c:5:8: error: expected expression before 'int'
+if(int argc != 2)
+    ^
+    q1.c:7:14: warning: implicit declaration of function 'open' [-Wimplicit-function-declaration]
+    int fd = open(argv[1],O_RDONLY);
+    ^
+    q1.c:7:27: error: 'O_RDONLY' undeclared (first use in this function)
+    int fd = open(argv[1],O_RDONLY);
+    ^
+    q1.c:7:27: note: each undeclared identifier is reported only once for each function it appears in
+    q1.c:9:5: error: unknown type name 'size_t'
+    size_t num_read;
+    ^
+    q1.c:12:5: error: unknown type name 'riot_t'
+    riot_t rio
+    ^
+    q1.c:13:5: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'rio_readinitb'
+    rio_readinitb(&rio,fd);
+    ^
+    q1.c:17:24: warning: implicit declaration of function 'rio_read' [-Wimplicit-function-declaration]
+if((num_read = rio_read(&rio,&n_byte,BUFFLE) >0)
+        ^
+        q1.c:17:34: error: 'rio' undeclared (first use in this function)
+        if((num_read = rio_read(&rio,&n_byte,BUFFLE) >0)
+            ^
+            q1.c:17:46: error: 'BUFFLE' undeclared (first use in this function)
+            if((num_read = rio_read(&rio,&n_byte,BUFFLE) >0)
+                ^
+                q1.c:18:9: error: expected ')' before '{' token
+                {
+                ^
+                q1.c:42:5: error: expected expression before '}' token
+                }
+                ^
+                makefile:2: recipe for target 'all' failed
+                make: *** [all] Error 1
+

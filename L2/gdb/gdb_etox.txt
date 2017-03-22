@@ -1,0 +1,1342 @@
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc -o etox etox.c -db
+cc1: warning: unrecognized gcc debugging option: b
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc -o etox etox.c -g
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gdb etox
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from etox...done.
+(gdb) run
+Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+This program calculates e^x
+using sum of (x^k)/k!
+Enter x, n : 1
+2
+x,n =   1.0000    2
+e^x =            inf
+[Inferior 1 (process 40140) exited normally]
+(gdb)
+(gdb)
+(gdb)
+(gdb) start
+Temporary breakpoint 1 at 0x40064e: file etox.c, line 7.
+Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+Temporary breakpoint 1, main () at etox.c:7
+7        {
+(gdb) start
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Temporary breakpoint 2 at 0x40064e: file etox.c, line 7.
+Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+Temporary breakpoint 2, main () at etox.c:7
+7        {
+(gdb) step
+12        printf("This program calculates e^x\n");
+(gdb) step
+_IO_puts (str=0x400858 "This program calculates e^x") at ioputs.c:33
+33      ioputs.c: No such file or directory.
+(gdb) step
+35      in ioputs.c
+(gdb) step
+strlen () at ../sysdeps/x86_64/strlen.S:66
+66      ../sysdeps/x86_64/strlen.S: No such file or directory.
+(gdb) step
+67      in ../sysdeps/x86_64/strlen.S
+(gdb) step
+68      in ../sysdeps/x86_64/strlen.S
+(gdb) step
+69      in ../sysdeps/x86_64/strlen.S
+(gdb) step
+70      in ../sysdeps/x86_64/strlen.S
+(gdb) step
+71      in ../sysdeps/x86_64/strlen.S
+(gdb) step
+72      in ../sysdeps/x86_64/strlen.S
+(gdb) continue
+Continuing.
+This program calculates e^x
+using sum of (x^k)/k!
+Enter x, n : 1, 2
+x,n =   1.0000    0
+e^x =            inf
+[Inferior 1 (process 40164) exited normally]
+(gdb) step
+The program is not being run.
+(gdb) start
+Temporary breakpoint 3 at 0x40064e: file etox.c, line 7.
+Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+Temporary breakpoint 3, main () at etox.c:7
+7        {
+(gdb) step over
+No symbol "over" in current context.
+(gdb) step
+12        printf("This program calculates e^x\n");
+(gdb) step 1
+_IO_puts (str=0x400858 "This program calculates e^x") at ioputs.c:33
+33      ioputs.c: No such file or directory.
+(gdb) step
+35      in ioputs.c
+(gdb) step
+strlen () at ../sysdeps/x86_64/strlen.S:66
+66      ../sysdeps/x86_64/strlen.S: No such file or directory.
+(gdb) step
+67      in ../sysdeps/x86_64/strlen.S
+(gdb) step
+68      in ../sysdeps/x86_64/strlen.S
+(gdb) step
+69      in ../sysdeps/x86_64/strlen.S
+(gdb) step
+70      in ../sysdeps/x86_64/strlen.S
+(gdb) continue
+Continuing.
+This program calculates e^x
+using sum of (x^k)/k!
+Enter x, n : 1, 2
+x,n =   1.0000    0
+e^x =            inf
+[Inferior 1 (process 40172) exited normally]
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) e
+Ambiguous command "e": echo, edit, en, enable, end, eval, exec-file, explore, expression.
+(gdb) q
+jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+jpg77@tux5:~/systems_cs_283/L2/gdb$ gdb etox
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from etox...done.
+(gdb) start
+Temporary breakpoint 1 at 0x40064e: file etox.c, line 7.
+Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+Temporary breakpoint 1, main () at etox.c:7
+7        {
+(gdb) step 10
+72      ../sysdeps/x86_64/strlen.S: No such file or directory.
+(gdb) step 10
+118     in ../sysdeps/x86_64/strlen.S
+(gdb) step 10
+132     in ../sysdeps/x86_64/strlen.S
+(gdb) step 20
+397     genops.c: No such file or directory.
+(gdb) step 20
+__GI__IO_setb (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>, b=0x602010 "", eb=0x602410 "",
+    a=a@entry=1) at genops.c:380
+    380     in genops.c
+    (gdb) step 20
+    846     fileops.c: No such file or directory.
+    (gdb) step
+    847     in fileops.c
+    (gdb) step 50
+    815     in fileops.c
+    (gdb) step 20
+    858     in fileops.c
+    (gdb) step
+    862     in fileops.c
+    (gdb)
+    863     in fileops.c
+    (gdb)
+    __GI__IO_default_xsputn (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>,
+        data=data@entry=0x400858, n=n@entry=27) at genops.c:457
+        457     genops.c: No such file or directory.
+        (gdb)
+        455     in genops.c
+        (gdb)
+        430     in genops.c
+        (gdb)
+        455     in genops.c
+        (gdb)
+        _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=32) at fileops.c:808
+        808     fileops.c: No such file or directory.
+        (gdb)
+        815     in fileops.c
+        (gdb)
+        807     in fileops.c
+        (gdb)
+        815     in fileops.c
+        (gdb)
+        850     in fileops.c
+        (gdb)
+        853     in fileops.c
+        (gdb)
+        856     in fileops.c
+        (gdb) start
+        The program being debugged has been started already.
+        Start it from the beginning? (y or n) y
+        Temporary breakpoint 2 at 0x40064e: file etox.c, line 7.
+        Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+        Temporary breakpoint 2, main () at etox.c:7
+        7        {
+        (gdb) step
+        12        printf("This program calculates e^x\n");
+        (gdb)
+        _IO_puts (str=0x400858 "This program calculates e^x") at ioputs.c:33
+        33      ioputs.c: No such file or directory.
+        (gdb)
+        35      in ioputs.c
+        (gdb)
+        strlen () at ../sysdeps/x86_64/strlen.S:66
+        66      ../sysdeps/x86_64/strlen.S: No such file or directory.
+        (gdb)
+        67      in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        68      in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        69      in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        70      in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        71      in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        72      in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        74      in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        76      in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        106     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        107     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        108     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        109     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        110     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        116     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        117     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        118     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        119     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        120     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        121     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        122     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        123     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        124     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        125     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        126     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        127     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        132     in ../sysdeps/x86_64/strlen.S
+        (gdb)
+        _IO_puts (str=0x400858 "This program calculates e^x") at ioputs.c:36
+        36      ioputs.c: No such file or directory.
+        (gdb)
+        35      in ioputs.c
+        (gdb)
+        36      in ioputs.c
+        (gdb)
+        39      in ioputs.c
+        (gdb)
+        40      in ioputs.c
+        (gdb)
+        _IO_new_file_xsputn (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, data=0x400858, n=27)
+            at fileops.c:1287
+            1287    fileops.c: No such file or directory.
+            (gdb)
+            1286    in fileops.c
+            (gdb)
+            1280    in fileops.c
+            (gdb)
+            1293    in fileops.c
+            (gdb)
+            1310    in fileops.c
+            (gdb)
+            1331    in fileops.c
+            (gdb)
+            _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=-1) at fileops.c:808
+            808     in fileops.c
+            (gdb)
+            815     in fileops.c
+            (gdb)
+            807     in fileops.c
+            (gdb)
+            815     in fileops.c
+            (gdb)
+            818     in fileops.c
+            (gdb)
+            820     in fileops.c
+            (gdb)
+            __GI__IO_doallocbuf (fp=fp@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>) at genops.c:395
+            395     genops.c: No such file or directory.
+            (gdb)
+            394     in genops.c
+            (gdb)
+            397     in genops.c
+            (gdb)
+            398     in genops.c
+            (gdb)
+            __GI__IO_file_doallocate (fp=0x7ffff7dd2620 <_IO_2_1_stdout_>) at filedoalloc.c:95
+            95      filedoalloc.c: No such file or directory.
+            (gdb)
+            110     in filedoalloc.c
+            (gdb)
+            __GI__IO_file_stat (fp=0x7ffff7dd2620 <_IO_2_1_stdout_>, st=0x7fffffffe850)
+                at fileops.c:1229
+                1229    fileops.c: No such file or directory.
+                (gdb)
+                1230    in fileops.c
+                (gdb)
+                __GI___fxstat (vers=1, fd=1, buf=0x7fffffffe850)
+                    at ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c:34
+                    34      ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c: No such file or directory.
+                    (gdb)
+                    33      in ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c
+                    (gdb)
+                    34      in ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c
+                    (gdb)
+                    35      in ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c
+                    (gdb)
+                    39      in ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c
+                    (gdb)
+                    __GI__IO_file_doallocate (fp=0x7ffff7dd2620 <_IO_2_1_stdout_>) at filedoalloc.c:112
+                    112     filedoalloc.c: No such file or directory.
+                    (gdb)
+                    117     in filedoalloc.c
+                    (gdb)
+                    115     in filedoalloc.c
+                    (gdb)
+                    120     in filedoalloc.c
+                    (gdb)
+                    123     in filedoalloc.c
+                    (gdb)
+                    127     in filedoalloc.c
+                    (gdb)
+                    129     in filedoalloc.c
+                    (gdb)
+                    128     in filedoalloc.c
+                    (gdb)
+                    130     in filedoalloc.c
+                    (gdb)
+                    __GI__IO_setb (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>, b=0x602010 "", eb=0x602410 "",
+                        a=a@entry=1) at genops.c:380
+                        380     genops.c: No such file or directory.
+                        (gdb)
+                        381     in genops.c
+                        (gdb)
+                        384     in genops.c
+                        (gdb)
+                        386     in genops.c
+                        (gdb)
+                        383     in genops.c
+                        (gdb)
+                        386     in genops.c
+                        (gdb)
+                        389     in genops.c
+                        (gdb)
+                        __GI__IO_file_doallocate (fp=0x7ffff7dd2620 <_IO_2_1_stdout_>) at filedoalloc.c:131
+                        131     filedoalloc.c: No such file or directory.
+                        (gdb)
+                        132     in filedoalloc.c
+                        (gdb)
+                        __GI__IO_doallocbuf (fp=fp@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>) at genops.c:401
+                        401     genops.c: No such file or directory.
+                        (gdb)
+                        _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=-1) at fileops.c:821
+                        821     fileops.c: No such file or directory.
+                        (gdb)
+                        830     in fileops.c
+                        (gdb)
+                        839     in fileops.c
+                        (gdb)
+                        847     in fileops.c
+                        (gdb)
+                        843     in fileops.c
+                        (gdb)
+                        846     in fileops.c
+                        (gdb)
+                        844     in fileops.c
+                        (gdb)
+                        841     in fileops.c
+                        (gdb)
+                        842     in fileops.c
+                        (gdb)
+                        847     in fileops.c
+                        (gdb)
+                        846     in fileops.c
+                        (gdb)
+                        847     in fileops.c
+                        (gdb)
+                        848     in fileops.c
+                        (gdb)
+                        850     in fileops.c
+                        (gdb)
+                        851     in fileops.c
+                        (gdb)
+                        863     in fileops.c
+                        (gdb)
+                        851     in fileops.c
+                        (gdb)
+                        _IO_new_do_write (fp=0x7ffff7dd2620 <_IO_2_1_stdout_>, data=0x602010 "", to_do=0)
+                            at fileops.c:494
+                            494     in fileops.c
+                            (gdb)
+                            495     in fileops.c
+                            (gdb)
+                            _IO_new_file_xsputn (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, data=<optimized out>, n=27)
+                                at fileops.c:1337
+                                1337    in fileops.c
+                                (gdb)
+                                1338    in fileops.c
+                                (gdb)
+                                1340    in fileops.c
+                                (gdb)
+                                1351    in fileops.c
+                                (gdb)
+                                1352    in fileops.c
+                                (gdb)
+                                __GI__IO_default_xsputn (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>,
+                                    data=data@entry=0x400858, n=n@entry=27) at genops.c:425
+                                    425     genops.c: No such file or directory.
+                                    (gdb)
+                                    422     in genops.c
+                                    (gdb)
+                                    430     in genops.c
+                                    (gdb)
+                                    455     in genops.c
+                                    (gdb)
+                                    _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=84) at fileops.c:808
+                                    808     fileops.c: No such file or directory.
+                                    (gdb)
+                                    815     in fileops.c
+                                    (gdb)
+                                    807     in fileops.c
+                                    (gdb)
+                                    815     in fileops.c
+                                    (gdb)
+                                    850     in fileops.c
+                                    (gdb)
+                                    853     in fileops.c
+                                    (gdb)
+                                    856     in fileops.c
+                                    (gdb)
+                                    857     in fileops.c
+                                    (gdb)
+                                    858     in fileops.c
+                                    (gdb)
+                                    862     in fileops.c
+                                    (gdb)
+                                    863     in fileops.c
+                                    (gdb)
+                                    __GI__IO_default_xsputn (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>,
+                                        data=data@entry=0x400858, n=n@entry=27) at genops.c:457
+                                        457     genops.c: No such file or directory.
+                                        (gdb)
+                                        455     in genops.c
+                                        (gdb)
+                                        430     in genops.c
+                                        (gdb)
+                                        455     in genops.c
+                                        (gdb)
+                                        _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=104) at fileops.c:808
+                                        808     fileops.c: No such file or directory.
+                                        (gdb)
+                                        815     in fileops.c
+                                        (gdb)
+                                        807     in fileops.c
+                                        (gdb)
+                                        815     in fileops.c
+                                        (gdb)
+                                        850     in fileops.c
+                                        (gdb)
+                                        853     in fileops.c
+                                        (gdb)
+                                        856     in fileops.c
+                                        (gdb)
+                                        857     in fileops.c
+                                        (gdb)
+                                        858     in fileops.c
+                                        (gdb)
+                                        862     in fileops.c
+                                        (gdb)
+                                        863     in fileops.c
+                                        (gdb)
+                                        __GI__IO_default_xsputn (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>,
+                                            data=data@entry=0x400858, n=n@entry=27) at genops.c:457
+                                            457     genops.c: No such file or directory.
+                                            (gdb)
+                                            455     in genops.c
+                                            (gdb)
+                                            430     in genops.c
+                                            (gdb)
+                                            455     in genops.c
+                                            (gdb)
+                                            _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=105) at fileops.c:808
+                                            808     fileops.c: No such file or directory.
+                                            (gdb)
+                                            815     in fileops.c
+                                            (gdb)
+                                            807     in fileops.c
+                                            (gdb)
+                                            815     in fileops.c
+                                            (gdb)
+                                            850     in fileops.c
+                                            (gdb)
+                                            853     in fileops.c
+                                            (gdb)
+                                            856     in fileops.c
+                                            (gdb)
+                                            857     in fileops.c
+                                            (gdb)
+                                            858     in fileops.c
+                                            (gdb)
+                                            862     in fileops.c
+                                            (gdb)
+                                            863     in fileops.c
+                                            (gdb)
+                                            __GI__IO_default_xsputn (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>,
+                                                data=data@entry=0x400858, n=n@entry=27) at genops.c:457
+                                                457     genops.c: No such file or directory.
+                                                (gdb)
+                                                455     in genops.c
+                                                (gdb)
+                                                430     in genops.c
+                                                (gdb)
+                                                455     in genops.c
+                                                (gdb)
+                                                _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=115) at fileops.c:808
+                                                808     fileops.c: No such file or directory.
+                                                (gdb)
+                                                815     in fileops.c
+                                                (gdb)
+                                                807     in fileops.c
+                                                (gdb)
+                                                815     in fileops.c
+                                                (gdb)
+                                                850     in fileops.c
+                                                (gdb)
+                                                853     in fileops.c
+                                                (gdb)
+                                                856     in fileops.c
+                                                (gdb)
+                                                857     in fileops.c
+                                                (gdb)
+                                                858     in fileops.c
+                                                (gdb)
+                                                862     in fileops.c
+                                                (gdb)
+                                                863     in fileops.c
+                                                (gdb)
+                                                __GI__IO_default_xsputn (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>,
+                                                    data=data@entry=0x400858, n=n@entry=27) at genops.c:457
+                                                    457     genops.c: No such file or directory.
+                                                    (gdb)
+                                                    455     in genops.c
+                                                    (gdb)
+                                                    430     in genops.c
+                                                    (gdb)
+                                                    455     in genops.c
+                                                    (gdb)
+                                                    _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=32) at fileops.c:808
+                                                    808     fileops.c: No such file or directory.
+                                                    (gdb)
+                                                    815     in fileops.c
+                                                    (gdb)
+                                                    807     in fileops.c
+                                                    (gdb)
+                                                    815     in fileops.c
+                                                    (gdb)
+                                                    850     in fileops.c
+                                                    (gdb)
+                                                    853     in fileops.c
+                                                    (gdb)
+                                                    856     in fileops.c
+                                                    (gdb)
+                                                    857     in fileops.c
+                                                    (gdb)
+                                                    858     in fileops.c
+                                                    (gdb)
+                                                    862     in fileops.c
+                                                    (gdb)
+                                                    863     in fileops.c
+                                                    (gdb)
+                                                    __GI__IO_default_xsputn (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>,
+                                                        data=data@entry=0x400858, n=n@entry=27) at genops.c:457
+                                                        457     genops.c: No such file or directory.
+                                                        (gdb)
+                                                        455     in genops.c
+                                                        (gdb)
+                                                        430     in genops.c
+                                                        (gdb)
+                                                        455     in genops.c
+                                                        (gdb)
+                                                        _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=112) at fileops.c:808
+                                                        808     fileops.c: No such file or directory.
+                                                        (gdb)
+                                                        815     in fileops.c
+                                                        (gdb)
+                                                        807     in fileops.c
+                                                        (gdb)
+                                                        815     in fileops.c
+                                                        (gdb)
+                                                        850     in fileops.c
+                                                        (gdb)
+                                                        853     in fileops.c
+                                                        (gdb)
+                                                        856     in fileops.c
+                                                        (gdb)
+                                                        857     in fileops.c
+                                                        (gdb)
+                                                        858     in fileops.c
+                                                        (gdb)
+                                                        862     in fileops.c
+                                                        (gdb)
+                                                        863     in fileops.c
+                                                        (gdb)
+                                                        __GI__IO_default_xsputn (f=f@entry=0x7ffff7dd2620 <_IO_2_1_stdout_>,
+                                                            data=data@entry=0x400858, n=n@entry=27) at genops.c:457
+                                                            457     genops.c: No such file or directory.
+                                                            (gdb)
+                                                            455     in genops.c
+                                                            (gdb)
+                                                            430     in genops.c
+                                                            (gdb)
+                                                            455     in genops.c
+                                                            (gdb)
+                                                            _IO_new_file_overflow (f=0x7ffff7dd2620 <_IO_2_1_stdout_>, ch=114) at fileops.c:808
+                                                            808     fileops.c: No such file or directory.
+                                                            (gdb)
+                                                            815     in fileops.c
+                                                            (gdb)
+                                                            807     in fileops.c
+                                                            (gdb)
+                                                            815     in fileops.c
+                                                            (gdb)
+                                                            850     in fileops.c
+                                                            (gdb)
+                                                            853     in fileops.c
+                                                            (gdb)
+                                                            856     in fileops.c
+                                                            (gdb)
+                                                            857     in fileops.c
+                                                            (gdb)
+                                                            858     in fileops.c
+                                                            (gdb) continue
+                                                            Continuing.
+                                                            This program calculates e^x
+                                                            using sum of (x^k)/k!
+                                                            Enter x, n : 1
+                                                            2
+                                                            x,n =   1.0000    2
+                                                            e^x =            inf
+                                                            [Inferior 1 (process 40322) exited normally]
+                                                            (gdb) Quit
+                                                            (gdb) q
+                                                            jpg77@tux5:~/systems_cs_283/L2/gdb$ vi etox.c
+                                                            jpg77@tux5:~/systems_cs_283/L2/gdb$ gdb etox
+                                                            GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+                                                            Copyright (C) 2016 Free Software Foundation, Inc.
+                                                            License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+                                                            This is free software: you are free to change and redistribute it.
+                                                            There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+                                                            and "show warranty" for details.
+                                                            This GDB was configured as "x86_64-linux-gnu".
+                                                            Type "show configuration" for configuration details.
+                                                            For bug reporting instructions, please see:
+                                                            <http://www.gnu.org/software/gdb/bugs/>.
+                                                            Find the GDB manual and other documentation resources online at:
+                                                            <http://www.gnu.org/software/gdb/documentation/>.
+                                                            For help, type "help".
+                                                            Type "apropos word" to search for commands related to "word"...
+                                                            Reading symbols from etox...done.
+                                                            (gdb) start
+                                                            Temporary breakpoint 1 at 0x40064e: file etox.c, line 7.
+                                                            Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+                                                            Temporary breakpoint 1, main () at etox.c:7
+                                                            7        {
+                                                            (gdb) break 16
+                                                            Breakpoint 2 at 0x400680: file etox.c, line 16.
+                                                            (gdb) continue
+                                                            Continuing.
+                                                            This program calculates e^x
+                                                            using sum of (x^k)/k!
+
+                                                            Breakpoint 2, main () at etox.c:16
+                                                            16        scanf("%lf%d",&x,&n);
+                                                            (gdb) break 17
+                                                            Breakpoint 3 at 0x40069a: file etox.c, line 17.
+                                                            (gdb) continue
+                                                            Continuing.
+                                                            Enter x, n : 1 2
+
+                                                            Breakpoint 3, main () at etox.c:17
+                                                            17        printf("x,n = %8.4lf %4d\n",x,n);
+                                                            (gdb) next
+                                                            x,n =   1.0000    2
+                                                            19        series = getvalue(x,n);
+                                                            (gdb) next
+                                                            20        printf("e^x = %14.10lf\n",series);
+                                                            (gdb) show
+                                                            ada print-signatures:  Whether the output of formal and return types for functions in the overloads selection menu is activated is on.
+                                                            ada trust-PAD-over-XVS:  Whether an optimization trusting PAD types over XVS types is activated is on.
+                                                            agent:  Debugger's willingness to use agent in inferior as a helper is off.
+                                                            annotate:  Annotation_level is 0.
+                                                            architecture:  The target architecture is set automatically (currently i386:x86-64)
+                                                            args:  Argument list to give program being debugged when it is started is "".
+                                                            auto-connect-native-target:  Whether GDB may automatically connect to the native target is on.
+                                                            auto-load gdb-scripts:  Auto-loading of canned sequences of commands scripts is on.
+                                                            auto-load libthread-db:  Auto-loading of inferior specific libthread_db is on.
+                                                            auto-load local-gdbinit:  Auto-loading of .gdbinit script from current directory is on.
+                                                            auto-load python-scripts:  Auto-loading of Python scripts is on.
+                                                            auto-load safe-path:  List of directories from which it is safe to auto-load files is $debugdir:$datadir/auto-load.
+                                                            auto-load scripts-directory:  List of directories from which to load auto-loaded scripts is $debugdir:$datadir/auto-load.
+                                                            auto-load-scripts:  Auto-loading of Python scripts is on.
+                                                            auto-solib-add:  Autoloading of shared library symbols is on.
+                                                            backtrace limit:  An upper bound on the number of backtrace levels is unlimited.
+                                                            backtrace past-entry:  Whether backtraces should continue past the entry point of a program is off.
+                                                            backtrace past-main:  Whether backtraces should continue past "main" is off.
+                                                            basenames-may-differ:  Whether a source file may have multiple base names is off.
+                                                            breakpoint always-inserted:  Always inserted breakpoint mode is off.
+                                                            breakpoint auto-hw:  Automatic usage of hardware breakpoints is on.
+                                                            breakpoint condition-evaluation:  Breakpoint condition evaluation mode is auto (currently host).
+                                                            breakpoint pending:  Debugger's behavior regarding pending breakpoints is auto.
+                                                            c:  range:  Range checking is "auto; currently off".
+                                                            type:  Strict type checking is on.
+                                                            can-use-hw-watchpoints:  Debugger's willingness to use watchpoint hardware is 1.
+                                                            case-sensitive:  Case sensitivity in name search is "auto; currently on".
+                                                            ch:  range:  Range checking is "auto; currently off".
+                                                            type:  Strict type checking is on.
+                                                            charset:  The host character set is "auto; currently ISO-8859-1".
+                                                            The target character set is "auto; currently ISO-8859-1".
+                                                            The target wide character set is "auto; currently UTF-32".
+                                                            check range:  Range checking is "auto; currently off".
+                                                            check type:  Strict type checking is on.
+                                                            circular-trace-buffer:  Target's use of circular trace buffer is off.
+                                                            code-cache:  Cache use for code accesses is on.
+                                                            coerce-float-to-double:  Coercion of floats to doubles when calling functions is on.
+                                                            compile-args:  Compile command command-line arguments are "-O0 -gdwarf-4 -fPIE -Wall  -Wno-implicit-function-declaration -Wno-unused-but-set-variable -Wno-unused-variable -fno-stack-protector".
+                                                            complaints:  Max number of complaints about incorrect symbols is 0.
+                                                            ---Type <return> to continue, or q <return> to quit---
+                                                            confirm:  Whether to confirm potentially dangerous operations is on.
+                                                            conv:  $bpnum = 3
+                                                            $_regex = <internal function _regex>
+                                                            $_streq = <internal function _streq>
+                                                            $_strlen = <internal function _strlen>
+                                                            $_memeq = <internal function _memeq>
+                                                            $_any_caller_matches = <internal function _any_caller_matches>
+                                                            $_any_caller_is = <internal function _any_caller_is>
+                                                            $_caller_matches = <internal function _caller_matches>
+                                                            $_caller_is = <internal function _caller_is>
+                                                            $_inferior = 1
+                                                            $_probe_arg11 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg10 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg9 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg8 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg7 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg6 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg5 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg4 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg3 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg2 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg1 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_arg0 = <error: No probe at PC 0x00000000004006db>
+                                                            $_probe_argc = <error: No probe at PC 0x00000000004006db>
+                                                            $_gthread = 1
+                                                            $_thread = 1
+                                                            $_siginfo = {si_signo = 5, si_errno = 0, si_code = 2, _sifields = {_pad = {4196059, 0,
+                                                                  608712635, 32570, 12952104, 0, 13, 0, 25530640, 0, 26148608, 0, 26148608, 0,
+                                                                        608754687, 32570, 612210208, 32570, 12, 0, 25880544, 0, 26148608, 0, 26148608, 0,
+                                                                              608760841, 32570}, _kill = {si_pid = 4196059, si_uid = 0}, _timer = {
+                                                                                    si_tid = 4196059, si_overrun = 0, si_sigval = {sival_int = 608712635,
+                                                                                            sival_ptr = 0x7f3a244837bb}}, _rt = {si_pid = 4196059, si_uid = 0, si_sigval = {
+                                                                                                    sival_int = 608712635, sival_ptr = 0x7f3a244837bb}}, _sigchld = {si_pid = 4196059,
+                                                                                                          si_uid = 0, si_status = 608712635, si_utime = 55628863094423354,
+                                                                                                                si_stime = 55834574848}, _sigfault = {si_addr = 0x4006db <main+149>,
+                                                                                                                      _addr_lsb = 139887693543355, _addr_bnd = {_lower = 0xc5a228, _upper = 0xd}},
+                                                                                                                          _sigpoll = {si_band = 4196059, si_fd = 608712635}}}
+                                                                                                                          $_isvoid = <internal function _isvoid>
+                                                                                                                          $_exception = <error: not stopped at a C++ exception catchpoint>
+                                                                                                                          $_sdata = void
+                                                                                                                          convenience:  $bpnum = 3
+                                                                                                                          $_regex = <internal function _regex>
+                                                                                                                          $_streq = <internal function _streq>
+                                                                                                                          $_strlen = <internal function _strlen>
+                                                                                                                          $_memeq = <internal function _memeq>
+                                                                                                                          $_any_caller_matches = <internal function _any_caller_matches>
+                                                                                                                          $_any_caller_is = <internal function _any_caller_is>
+                                                                                                                          $_caller_matches = <internal function _caller_matches>
+                                                                                                                          ---Type <return> to continue, or q <return> to quit---
+                                                                                                                          $_caller_is = <internal function _caller_is>
+                                                                                                                          $_inferior = 1
+                                                                                                                          $_probe_arg11 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg10 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg9 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg8 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg7 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg6 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg5 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg4 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg3 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg2 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg1 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_arg0 = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_probe_argc = <error: No probe at PC 0x00000000004006db>
+                                                                                                                          $_gthread = 1
+                                                                                                                          $_thread = 1
+                                                                                                                          $_siginfo = {si_signo = 5, si_errno = 0, si_code = 2, _sifields = {_pad = {4196059, 0,
+                                                                                                                                608712635, 32570, 12952454, 0, 13, 0, 25530640, 0, 26148608, 0, 26148608, 0,
+                                                                                                                                      608754687, 32570, 612210208, 32570, 12, 0, 25880544, 0, 26148608, 0, 26148608, 0,
+                                                                                                                                            608760841, 32570}, _kill = {si_pid = 4196059, si_uid = 0}, _timer = {
+                                                                                                                                                  si_tid = 4196059, si_overrun = 0, si_sigval = {sival_int = 608712635,
+                                                                                                                                                          sival_ptr = 0x7f3a244837bb}}, _rt = {si_pid = 4196059, si_uid = 0, si_sigval = {
+                                                                                                                                                                  sival_int = 608712635, sival_ptr = 0x7f3a244837bb}}, _sigchld = {si_pid = 4196059,
+                                                                                                                                                                        si_uid = 0, si_status = 608712635, si_utime = 55630366332976954,
+                                                                                                                                                                              si_stime = 55834574848}, _sigfault = {si_addr = 0x4006db <main+149>,
+                                                                                                                                                                                    _addr_lsb = 139887693543355, _addr_bnd = {_lower = 0xc5a386, _upper = 0xd}},
+                                                                                                                                                                                        _sigpoll = {si_band = 4196059, si_fd = 608712635}}}
+                                                                                                                                                                                        $_isvoid = <internal function _isvoid>
+                                                                                                                                                                                        $_exception = <error: not stopped at a C++ exception catchpoint>
+                                                                                                                                                                                        $_sdata = void
+                                                                                                                                                                                        cp-abi:  The currently selected C++ ABI is "auto" (currently "gnu-v3").
+                                                                                                                                                                                        data-directory:  GDB's data directory is "/usr/share/gdb".
+                                                                                                                                                                                        dcache line-size:  Dcache line size is 64.
+                                                                                                                                                                                        dcache size:  Number of dcache lines is 4096.
+                                                                                                                                                                                        debug arch:  Architecture debugging is 0.
+                                                                                                                                                                                        debug auto-load:  Debugging output for files of 'set auto-load ...' is off.
+                                                                                                                                                                                        debug bfd-cache:  BFD cache debugging is 0.
+                                                                                                                                                                                        debug check-physname:  Whether to check "physname" is off.
+                                                                                                                                                                                        debug coff-pe-read:  Coff PE read debugging is 0.
+                                                                                                                                                                                        debug compile:  Compile debugging is off.
+                                                                                                                                                                                        debug displaced:  Displace stepping debugging is off.
+                                                                                                                                                                                        debug dwarf-die:  Debugging of the DWARF DIE reader is 0.
+                                                                                                                                                                                        debug dwarf-line:  Debugging of the dwarf line reader is 0.
+                                                                                                                                                                                        debug dwarf-read:  Debugging of the DWARF reader is 0.
+                                                                                                                                                                                        debug entry-values:  Entry values and tail call frames debugging is 0.
+                                                                                                                                                                                        debug expression:  Expression debugging is 0.
+                                                                                                                                                                                        debug frame:  Frame debugging is 0.
+                                                                                                                                                                                        ---Type <return> to continue, or q <return> to quit---
+                                                                                                                                                                                        debug infrun:  Inferior debugging is 0.
+                                                                                                                                                                                        debug jit:  JIT debugging is 0.
+                                                                                                                                                                                        debug libthread-db:  libthread-db debugging is 0.
+                                                                                                                                                                                        debug lin-lwp:  Debugging of GNU/Linux lwp module is 0.
+                                                                                                                                                                                        debug linux-namespaces:  Debugging of GNU/Linux namespaces module is off.
+                                                                                                                                                                                        debug notification:  Debugging of async remote notification is off.
+                                                                                                                                                                                        debug observer:  Observer debugging is 0.
+                                                                                                                                                                                        debug overload:  Debugging of C++ overloading is 0.
+                                                                                                                                                                                        debug parser:  Parser debugging is off.
+                                                                                                                                                                                        debug py-unwind:  Python unwinder debugging is 0.
+                                                                                                                                                                                        debug record:  Debugging of process record target is 0.
+                                                                                                                                                                                        debug remote:  Debugging of remote protocol is 0.
+                                                                                                                                                                                        debug serial:  Serial debugging is 0.
+                                                                                                                                                                                        debug stap-expression:  SystemTap Probe expression debugging is 0.
+                                                                                                                                                                                        debug symbol-lookup:  Debugging of symbol lookup is 0.
+                                                                                                                                                                                        debug symfile:  Symfile debugging is off.
+                                                                                                                                                                                        debug symtab-create:  Debugging of symbol table creation is 0.
+                                                                                                                                                                                        debug target:  Target debugging is 0.
+                                                                                                                                                                                        debug timestamp:  Timestamping debugging messages is off.
+                                                                                                                                                                                        debug varobj:  Varobj debugging is 0.
+                                                                                                                                                                                        debug xml:  XML debugging is off.
+                                                                                                                                                                                        debug-file-directory:  The directory where separate debug symbols are searched for is "/usr/lib/debug".
+                                                                                                                                                                                        default-collect:  The list of expressions to collect by default is "".
+                                                                                                                                                                                        demangle-style:  The current C++ demangling style is "auto".
+                                                                                                                                                                                        detach-on-fork:  Whether gdb will detach the child of a fork is on.
+                                                                                                                                                                                        directories:  Source directories searched: $cdir:$cwd
+                                                                                                                                                                                        disable-randomization:  Disabling randomization of debuggee's virtual address space is on.
+                                                                                                                                                                                        disassemble-next-line:  Debugger's willingness to use disassemble-next-line is off.
+                                                                                                                                                                                        disassembly-flavor:  The disassembly flavor is "att".
+                                                                                                                                                                                        disconnected-dprintf:  Whether dprintf continues after GDB disconnects is on.
+                                                                                                                                                                                        disconnected-tracing:  Whether tracing continues after GDB disconnects is off.
+                                                                                                                                                                                        displaced-stepping:  Debugger's willingness to use displaced stepping to step over breakpoints is auto (currently on).
+                                                                                                                                                                                        dprintf-channel:  The channel to use for dynamic printf is "".
+                                                                                                                                                                                        dprintf-function:  The function to use for dynamic printf is "printf".
+                                                                                                                                                                                        dprintf-style:  The style of usage for dynamic printf is "gdb".
+                                                                                                                                                                                        editing:  Editing of command lines as they are typed is on.
+                                                                                                                                                                                        endian:  The target endianness is set automatically (currently little endian)
+                                                                                                                                                                                        environment:  XDG_SESSION_ID=1112
+                                                                                                                                                                                        TERM=xterm
+                                                                                                                                                                                        SHELL=/bin/bash
+                                                                                                                                                                                        DERBY_HOME=/usr/lib/jvm/java-8-oracle/db
+                                                                                                                                                                                        SSH_CLIENT=192.168.224.63 41237 22
+                                                                                                                                                                                        SSH_TTY=/dev/pts/2
+                                                                                                                                                                                        USER=jpg77
+                                                                                                                                                                                        MAIL=/var/mail/jpg77
+                                                                                                                                                                                        PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/site/local/go/bin/:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/li---Type <return> to continue, or q <return> to quit---
+                                                                                                                                                                                        b/jvm/java-8-oracle/jre/bin
+                                                                                                                                                                                        PWD=/home/jpg77/systems_cs_283/L2/gdb
+                                                                                                                                                                                        JAVA_HOME=/usr/lib/jvm/java-8-oracle
+                                                                                                                                                                                        LANG=en_US
+                                                                                                                                                                                        SHLVL=1
+                                                                                                                                                                                        HOME=/home/jpg77
+                                                                                                                                                                                        LANGUAGE=en_US:
+                                                                                                                                                                                        LOGNAME=jpg77
+                                                                                                                                                                                        J2SDKDIR=/usr/lib/jvm/java-8-oracle
+                                                                                                                                                                                        SSH_CONNECTION=192.168.224.63 41237 192.168.224.144 22
+                                                                                                                                                                                        XDG_RUNTIME_DIR=/run/user/11586
+                                                                                                                                                                                        J2REDIR=/usr/lib/jvm/java-8-oracle/jre
+                                                                                                                                                                                        OLDPWD=/home/jpg77/systems_cs_283/L2/make_files
+                                                                                                                                                                                        _=/usr/bin/gdb
+                                                                                                                                                                                        LINES=49
+                                                                                                                                                                                        COLUMNS=93
+                                                                                                                                                                                        exec-direction:  Forward.
+                                                                                                                                                                                        exec-done-display:  Notification of completion for asynchronous execution commands is off.
+                                                                                                                                                                                        exec-wrapper:  The wrapper for running programs is "".
+                                                                                                                                                                                        extended-prompt:  The extended prompt is not set.
+                                                                                                                                                                                        extension-language:  Mapping between filename extension and source language is "".
+                                                                                                                                                                                        filename-display:  Filenames are displayed as "relative".
+                                                                                                                                                                                        follow-exec-mode:  Follow exec mode is "same".
+                                                                                                                                                                                        follow-fork-mode:  Debugger response to a program call of fork or vfork is "parent".
+                                                                                                                                                                                        frame-filter priority:  show frame-filter priority takes exactly two arguments.
+                                                                                                                                                                                        gnutarget:  The current BFD target is "auto".
+                                                                                                                                                                                        gu:  print-stack:  The mode of Guile exception printing on error is "message".
+                                                                                                                                                                                        guile print-stack:  The mode of Guile exception printing on error is "message".
+                                                                                                                                                                                        height:  Number of lines gdb thinks are in a page is 49.
+                                                                                                                                                                                        history expansion:  History expansion on command input is off.
+                                                                                                                                                                                        history filename:  The filename in which to record the command history is "/home/jpg77/systems_cs_283/L2/gdb/.gdb_history".
+                                                                                                                                                                                        history remove-duplicates:  The number of history entries to look back at for duplicates is 0.
+                                                                                                                                                                                        history save:  Saving of the history record on exit is off.
+                                                                                                                                                                                        history size:  The size of the command history is 256.
+                                                                                                                                                                                        host-charset:  The host character set is "auto; currently ISO-8859-1".
+                                                                                                                                                                                        inferior-tty:  Terminal for future runs of program being debugged is "".
+                                                                                                                                                                                        input-radix:  Default input radix for entering numbers is 10.
+                                                                                                                                                                                        interactive-mode:  Debugger's interactive mode is auto (currently on).
+                                                                                                                                                                                        language:  The current source language is "auto; currently c".
+                                                                                                                                                                                        libthread-db-search-path:  The current search path or libthread_db is "$sdir:$pdir".
+                                                                                                                                                                                        listsize:  Number of source lines gdb will list by default is 10.
+                                                                                                                                                                                        logging file:  The current logfile is "gdb.txt".
+                                                                                                                                                                                        logging overwrite:  Whether logging overwrites or appends to the log file is off.
+                                                                                                                                                                                        logging redirect:  The logging output mode is off.
+                                                                                                                                                                                        max-completions:  Maximum number of completion candidates is 200.
+                                                                                                                                                                                        max-user-call-depth:  The max call depth for user-defined commands is 1024.
+                                                                                                                                                                                        ---Type <return> to continue, or q <return> to quit---
+                                                                                                                                                                                        max-value-size:  Maximum value size is 65536 bytes.
+                                                                                                                                                                                        may-insert-breakpoints:  Permission to insert breakpoints in the target is on.
+                                                                                                                                                                                        may-insert-fast-tracepoints:  Permission to insert fast tracepoints in the target is on.
+                                                                                                                                                                                        may-insert-tracepoints:  Permission to insert tracepoints in the target is on.
+                                                                                                                                                                                        may-interrupt:  Permission to interrupt or signal the target is on.
+                                                                                                                                                                                        may-write-memory:  Permission to write into target memory is on.
+                                                                                                                                                                                        may-write-registers:  Permission to write into registers is on.
+                                                                                                                                                                                        mem  inaccessible-by-default:  Unknown memory addresses will be treated as inaccessible.
+                                                                                                                                                                                        mi-async:  Whether MI is in asynchronous mode is off.
+                                                                                                                                                                                        mpx bound:  Intel Memory Protection Extensions not supported on this target.
+                                                                                                                                                                                        multiple-symbols:  How the debugger handles ambiguities in expressions is "all".
+                                                                                                                                                                                        non-stop:  Controlling the inferior in non-stop mode is off.
+                                                                                                                                                                                        observer:  Observer mode is off.
+                                                                                                                                                                                        opaque-type-resolution:  Resolution of opaque struct/class/union types (if set before loading symbols) is on.
+                                                                                                                                                                                        osabi:  The current OS ABI is "auto" (currently "GNU/Linux").
+                                                                                                                                                                                        The default OS ABI is "GNU/Linux".
+                                                                                                                                                                                        output-radix:  Default output radix for printing of values is 10.
+                                                                                                                                                                                        overload-resolution:  Overload resolution in evaluating C++ functions is on.
+                                                                                                                                                                                        p:  address:  Printing of addresses is on.
+                                                                                                                                                                                        array:  Pretty formatting of arrays is off.
+                                                                                                                                                                                        array-indexes:  Printing of array indexes is off.
+                                                                                                                                                                                        asm-demangle:  Demangling of C++/ObjC names in disassembly listings is off.
+                                                                                                                                                                                        demangle:  Demangling of encoded C++/ObjC names when displaying symbols is on.
+                                                                                                                                                                                        elements:  Limit on string chars or array elements to print is 200.
+                                                                                                                                                                                        entry-values:  Printing of function arguments at function entry is "default".
+                                                                                                                                                                                        frame-arguments:  Printing of non-scalar frame arguments is "scalars".
+                                                                                                                                                                                        inferior-events:  Printing of inferior events is off.
+                                                                                                                                                                                        max-symbolic-offset:  The largest offset that will be printed in <symbol+1234> form is unlimited.
+                                                                                                                                                                                        null-stop:  Printing of char arrays to stop at first null char is off.
+                                                                                                                                                                                        object:  Printing of object's derived type based on vtable info is off.
+                                                                                                                                                                                        pascal_static-members:  Printing of pascal static members is on.
+                                                                                                                                                                                        pretty:  Pretty formatting of structures is off.
+                                                                                                                                                                                        print raw frame-arguments:  Whether to print frame arguments in raw form is off.
+                                                                                                                                                                                        repeats:  Threshold for repeated print elements is 10.
+                                                                                                                                                                                        sevenbit-strings:  Printing of 8-bit characters in strings as \nnn is off.
+                                                                                                                                                                                        static-members:  Printing of C++ static members is on.
+                                                                                                                                                                                        symbol:  Printing of symbols when printing pointers is on.
+                                                                                                                                                                                        symbol-filename:  Printing of source filename and line number with <symbol> is off.
+                                                                                                                                                                                        symbol-loading:  Printing of symbol loading messages is "full".
+                                                                                                                                                                                        thread-events:  Printing of thread events is on.
+                                                                                                                                                                                        print type methods:  Printing of methods defined in a class in on
+                                                                                                                                                                                        print type typedefs:  Printing of typedefs defined in a class in on
+                                                                                                                                                                                        union:  Printing of unions interior to structures is on.
+                                                                                                                                                                                        vtbl:  Printing of C++ virtual function tables is off.
+                                                                                                                                                                                        pagination:  State of pagination is on.
+                                                                                                                                                                                        paths:  Executable and object file path: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/site/local/go/bin/:/usr/lib/jvm/java-8-oracle/bin:/usr/---Type <return> to continue, or q <return> to quit---
+                                                                                                                                                                                        lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+                                                                                                                                                                                        pr:  address:  Printing of addresses is on.
+                                                                                                                                                                                        array:  Pretty formatting of arrays is off.
+                                                                                                                                                                                        array-indexes:  Printing of array indexes is off.
+                                                                                                                                                                                        asm-demangle:  Demangling of C++/ObjC names in disassembly listings is off.
+                                                                                                                                                                                        demangle:  Demangling of encoded C++/ObjC names when displaying symbols is on.
+                                                                                                                                                                                        elements:  Limit on string chars or array elements to print is 200.
+                                                                                                                                                                                        entry-values:  Printing of function arguments at function entry is "default".
+                                                                                                                                                                                        frame-arguments:  Printing of non-scalar frame arguments is "scalars".
+                                                                                                                                                                                        inferior-events:  Printing of inferior events is off.
+                                                                                                                                                                                        max-symbolic-offset:  The largest offset that will be printed in <symbol+1234> form is unlimited.
+                                                                                                                                                                                        null-stop:  Printing of char arrays to stop at first null char is off.
+                                                                                                                                                                                        object:  Printing of object's derived type based on vtable info is off.
+                                                                                                                                                                                        pascal_static-members:  Printing of pascal static members is on.
+                                                                                                                                                                                        pretty:  Pretty formatting of structures is off.
+                                                                                                                                                                                        print raw frame-arguments:  Whether to print frame arguments in raw form is off.
+                                                                                                                                                                                        repeats:  Threshold for repeated print elements is 10.
+                                                                                                                                                                                        sevenbit-strings:  Printing of 8-bit characters in strings as \nnn is off.
+                                                                                                                                                                                        static-members:  Printing of C++ static members is on.
+                                                                                                                                                                                        symbol:  Printing of symbols when printing pointers is on.
+                                                                                                                                                                                        symbol-filename:  Printing of source filename and line number with <symbol> is off.
+                                                                                                                                                                                        symbol-loading:  Printing of symbol loading messages is "full".
+                                                                                                                                                                                        thread-events:  Printing of thread events is on.
+                                                                                                                                                                                        print type methods:  Printing of methods defined in a class in on
+                                                                                                                                                                                        print type typedefs:  Printing of typedefs defined in a class in on
+                                                                                                                                                                                        union:  Printing of unions interior to structures is on.
+                                                                                                                                                                                        vtbl:  Printing of C++ virtual function tables is off.
+                                                                                                                                                                                        print address:  Printing of addresses is on.
+                                                                                                                                                                                        print array:  Pretty formatting of arrays is off.
+                                                                                                                                                                                        print array-indexes:  Printing of array indexes is off.
+                                                                                                                                                                                        print asm-demangle:  Demangling of C++/ObjC names in disassembly listings is off.
+                                                                                                                                                                                        print demangle:  Demangling of encoded C++/ObjC names when displaying symbols is on.
+                                                                                                                                                                                        print elements:  Limit on string chars or array elements to print is 200.
+                                                                                                                                                                                        print entry-values:  Printing of function arguments at function entry is "default".
+                                                                                                                                                                                        print frame-arguments:  Printing of non-scalar frame arguments is "scalars".
+                                                                                                                                                                                        print inferior-events:  Printing of inferior events is off.
+                                                                                                                                                                                        print max-symbolic-offset:  The largest offset that will be printed in <symbol+1234> form is unlimited.
+                                                                                                                                                                                        print null-stop:  Printing of char arrays to stop at first null char is off.
+                                                                                                                                                                                        print object:  Printing of object's derived type based on vtable info is off.
+                                                                                                                                                                                        print pascal_static-members:  Printing of pascal static members is on.
+                                                                                                                                                                                        print pretty:  Pretty formatting of structures is off.
+                                                                                                                                                                                        print raw frame-arguments:  Whether to print frame arguments in raw form is off.
+                                                                                                                                                                                        print repeats:  Threshold for repeated print elements is 10.
+                                                                                                                                                                                        print sevenbit-strings:  Printing of 8-bit characters in strings as \nnn is off.
+                                                                                                                                                                                        print static-members:  Printing of C++ static members is on.
+                                                                                                                                                                                        print symbol:  Printing of symbols when printing pointers is on.
+                                                                                                                                                                                        ---Type <return> to continue, or q <return> to quit---q
+                                                                                                                                                                                        Quit
+                                                                                                                                                                                        (gdb)
+                                                                                                                                                                                        (gdb)
+                                                                                                                                                                                        (gdb) start
+                                                                                                                                                                                        The program being debugged has been started already.
+                                                                                                                                                                                        Start it from the beginning? (y or n) n
+                                                                                                                                                                                        Program not restarted.
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        e^x =            inf
+                                                                                                                                                                                        [Inferior 1 (process 40379) exited normally]
+                                                                                                                                                                                        (gdb) start
+                                                                                                                                                                                        Temporary breakpoint 4 at 0x40064e: file etox.c, line 7.
+                                                                                                                                                                                        Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+                                                                                                                                                                                        Temporary breakpoint 4, main () at etox.c:7
+                                                                                                                                                                                        7        {
+                                                                                                                                                                                        (gdb) break 17
+                                                                                                                                                                                        Note: breakpoint 3 also set at pc 0x40069a.
+                                                                                                                                                                                        Breakpoint 5 at 0x40069a: file etox.c, line 17.
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        This program calculates e^x
+                                                                                                                                                                                        using sum of (x^k)/k!
+
+                                                                                                                                                                                        Breakpoint 2, main () at etox.c:16
+                                                                                                                                                                                        16        scanf("%lf%d",&x,&n);
+                                                                                                                                                                                        (gdb) continuie
+                                                                                                                                                                                        Undefined command: "continuie".  Try "help".
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        Enter x, n : 1 2
+
+                                                                                                                                                                                        Breakpoint 3, main () at etox.c:17
+                                                                                                                                                                                        17        printf("x,n = %8.4lf %4d\n",x,n);
+                                                                                                                                                                                        (gdb) next
+                                                                                                                                                                                        x,n =   1.0000    2
+                                                                                                                                                                                        19        series = getvalue(x,n);
+                                                                                                                                                                                        (gdb) next
+                                                                                                                                                                                        20        printf("e^x = %14.10lf\n",series);
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        __printf (format=0x4008b0 "e^x = %14.10lf\n") at printf.c:28
+                                                                                                                                                                                        28      printf.c: No such file or directory.
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        32      in printf.c
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        e^x =            inf
+                                                                                                                                                                                        [Inferior 1 (process 40400) exited normally]
+                                                                                                                                                                                        (gdb) start
+                                                                                                                                                                                        Temporary breakpoint 6 at 0x40064e: file etox.c, line 7.
+                                                                                                                                                                                        Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+                                                                                                                                                                                        Temporary breakpoint 6, main () at etox.c:7
+                                                                                                                                                                                        7        {
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        This program calculates e^x
+                                                                                                                                                                                        using sum of (x^k)/k!
+
+                                                                                                                                                                                        Breakpoint 2, main () at etox.c:16
+                                                                                                                                                                                        16        scanf("%lf%d",&x,&n);
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        Enter x, n : 1 2
+
+                                                                                                                                                                                        Breakpoint 3, main () at etox.c:17
+                                                                                                                                                                                        17        printf("x,n = %8.4lf %4d\n",x,n);
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        __printf (format=0x40089e "x,n = %8.4lf %4d\n") at printf.c:28
+                                                                                                                                                                                        28      printf.c: No such file or directory.
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        32      in printf.c
+                                                                                                                                                                                        (gdb) next
+                                                                                                                                                                                        33      in printf.c
+                                                                                                                                                                                        (gdb) next
+                                                                                                                                                                                        32      in printf.c
+                                                                                                                                                                                        (gdb) step out
+                                                                                                                                                                                        No symbol "out" in current context.
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        x,n =   1.0000    2
+                                                                                                                                                                                        e^x =            inf
+                                                                                                                                                                                        [Inferior 1 (process 40406) exited normally]
+                                                                                                                                                                                        (gdb) start
+                                                                                                                                                                                        Temporary breakpoint 7 at 0x40064e: file etox.c, line 7.
+                                                                                                                                                                                        Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+                                                                                                                                                                                        Temporary breakpoint 7, main () at etox.c:7
+                                                                                                                                                                                        7        {
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        This program calculates e^x
+                                                                                                                                                                                        using sum of (x^k)/k!
+
+                                                                                                                                                                                        Breakpoint 2, main () at etox.c:16
+                                                                                                                                                                                        16        scanf("%lf%d",&x,&n);
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        Enter x, n : 1 3
+
+                                                                                                                                                                                        Breakpoint 3, main () at etox.c:17
+                                                                                                                                                                                        17        printf("x,n = %8.4lf %4d\n",x,n);
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        __printf (format=0x40089e "x,n = %8.4lf %4d\n") at printf.c:28
+                                                                                                                                                                                        28      printf.c: No such file or directory.
+                                                                                                                                                                                        (gdb) next
+                                                                                                                                                                                        32      in printf.c
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        x,n =   1.0000    3
+                                                                                                                                                                                        e^x =            inf
+                                                                                                                                                                                        [Inferior 1 (process 40412) exited normally]
+                                                                                                                                                                                        (gdb) start
+                                                                                                                                                                                        Temporary breakpoint 8 at 0x40064e: file etox.c, line 7.
+                                                                                                                                                                                        Starting program: /home/jpg77/systems_cs_283/L2/gdb/etox
+
+                                                                                                                                                                                        Temporary breakpoint 8, main () at etox.c:7
+                                                                                                                                                                                        7        {
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        This program calculates e^x
+                                                                                                                                                                                        using sum of (x^k)/k!
+
+                                                                                                                                                                                        Breakpoint 2, main () at etox.c:16
+                                                                                                                                                                                        16        scanf("%lf%d",&x,&n);
+                                                                                                                                                                                        (gdb) continue
+                                                                                                                                                                                        Continuing.
+                                                                                                                                                                                        Enter x, n : 1 2
+
+                                                                                                                                                                                        Breakpoint 3, main () at etox.c:17
+                                                                                                                                                                                        17        printf("x,n = %8.4lf %4d\n",x,n);
+                                                                                                                                                                                        (gdb) next
+                                                                                                                                                                                        x,n =   1.0000    2
+                                                                                                                                                                                        19        series = getvalue(x,n);
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        getvalue (x=1, n=2) at etox.c:30
+                                                                                                                                                                                        30        double value = 0.0;
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        31        double xpow = 1.0;
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        32        for (k = 0; k <= n; k++)
+                                                                                                                                                                                        (gdb) print n
+                                                                                                                                                                                        $1 = 2
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        34          value += xpow / factorial(k);
+                                                                                                                                                                                        (gdb) print xpow
+                                                                                                                                                                                        $2 = 1
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        factorial (number=0) at etox.c:44
+                                                                                                                                                                                        44        int fact = 0;
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        46        for (j = 1; j <= number; j++)
+                                                                                                                                                                                        (gdb) print number
+                                                                                                                                                                                        $3 = 0
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        51        return(fact);
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        52       }
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        getvalue (x=1, n=2) at etox.c:35
+                                                                                                                                                                                        35          xpow = xpow * x;
+                                                                                                                                                                                        (gdb) print xpow
+                                                                                                                                                                                        $4 = 1
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        32        for (k = 0; k <= n; k++)
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        34          value += xpow / factorial(k);
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        factorial (number=1) at etox.c:44
+                                                                                                                                                                                        44        int fact = 0;
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        46        for (j = 1; j <= number; j++)
+                                                                                                                                                                                        (gdb) print number
+                                                                                                                                                                                        $5 = 1
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        48          fact = fact * j;
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        46        for (j = 1; j <= number; j++)
+                                                                                                                                                                                        (gdb) step
+                                                                                                                                                                                        51        return(fact);
+                                                                                                                                                                                        (gdb) print fact
+                                                                                                                                                                                        $6 = 0
+                                                                                                                                                                                        (gdb) exit
+                                                                                                                                                                                        Undefined command: "exit".  Try "help".
+                                                                                                                                                                                        (gdb) exit
+                                                                                                                                                                                        Undefined command: "exit".  Try "help".
+                                                                                                                                                                                        (gdb) q
+                                                                                                                                                                                        A debugging session is active.
+
+                                                                                                                                                                                                Inferior 1 [process 40413] will be killed.
+
+                                                                                                                                                                                                Quit anyway? (y or n) y
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ make
+                                                                                                                                                                                                cc    -c -o etox.o etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 1 2
+                                                                                                                                                                                                x,n =   1.0000    2
+                                                                                                                                                                                                e^x =            inf
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 1 99
+                                                                                                                                                                                                x,n =   1.0000   99
+                                                                                                                                                                                                e^x =            inf
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 9 2
+                                                                                                                                                                                                x,n =   9.0000    2
+                                                                                                                                                                                                e^x =            inf
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc etox.c -o etox
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 8 2
+                                                                                                                                                                                                x,n =   8.0000    2
+                                                                                                                                                                                                e^x =  41.0000000000
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc etox.c -o etox
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 1 9
+                                                                                                                                                                                                x,n =   1.0000    9
+                                                                                                                                                                                                e^x =            inf
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 2 9
+                                                                                                                                                                                                x,n =   2.0000    9
+                                                                                                                                                                                                e^x =            inf
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 3 12
+                                                                                                                                                                                                x,n =   3.0000   12
+                                                                                                                                                                                                e^x =            inf
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc etox.c -o etox
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 1 3
+                                                                                                                                                                                                x,n =   1.0000    3
+                                                                                                                                                                                                e^x =   1.6666666667
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 2
+                                                                                                                                                                                                4
+                                                                                                                                                                                                x,n =   2.0000    4
+                                                                                                                                                                                                e^x =   3.0000000000
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 2
+                                                                                                                                                                                                3
+                                                                                                                                                                                                x,n =   2.0000    3
+                                                                                                                                                                                                e^x =   2.6666666667
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ 1 3
+                                                                                                                                                                                                1: command not found
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n :
+                                                                                                                                                                                                ^C
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc etox.c -o etox
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 3 2
+                                                                                                                                                                                                x,n =   3.0000    2
+                                                                                                                                                                                                e^x =   2.5000000000
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 2 3
+                                                                                                                                                                                                x,n =   2.0000    3
+                                                                                                                                                                                                e^x =   2.6666666667
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc etox.c -o etox
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 2 3
+                                                                                                                                                                                                x,n =   2.0000    3
+                                                                                                                                                                                                e^x =   2.0000000000
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 1
+                                                                                                                                                                                                3
+                                                                                                                                                                                                x,n =   1.0000    3
+                                                                                                                                                                                                e^x =   1.5000000000
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ vim etox.c
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ gcc etox.c -o etox
+                                                                                                                                                                                                jpg77@tux5:~/systems_cs_283/L2/gdb$ ./etox
+                                                                                                                                                                                                This program calculates e^x
+                                                                                                                                                                                                using sum of (x^k)/k!
+                                                                                                                                                                                                Enter x, n : 4 2
+                                                                                                                                                                                                x,n =   4.0000    2
+                                                                                                                                                                                                e^x =   3.0000000000
+

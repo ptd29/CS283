@@ -1,0 +1,18 @@
+Jason Gallagher
+HW2
+
+Problem 10.6:
+Answers found in: P_10_6.txt
+
+Problem 10.8:
+
+Answer in: P108.c
+This is psuedo code and was not tested to compile
+
+Problem 10.10:
+Answer in: P1010.c
+This is psuedo code as well
+
+Tee command problem:
+to compile: make p4
+to run: ./teec <filename>

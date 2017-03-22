@@ -1,0 +1,76 @@
+Homework 6
+Jason Gallagher
+CS283: Systems Programming
+
+8.11:
+output:
+hello
+hello
+hello
+hello
+
+The program will print hello 4 times. This is because fork is called two times.
+The first fork call creates a child process making two process's total. Then
+the second fork is called by both the child and parent process to create 2 more
+child process's. Each of the three child process prints hello and the parent
+also prints hello making the output above.
+
+8.12:
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+
+The program will print hello 8 times. It will print 4 times in the doit()
+function call for the same reason as 8.11 and then will print another 4 times
+when control is returned back to the main function, as the children process's
+are not terminated in the function call.
+
+8.13:
+Possible Output:
+x=4
+x=2
+X=3
+
+This output would print out if the parent process executes the if statement printf (line 8
+in text) then the child process prints at the second printf (line 10 in text) followed by the
+parent process printing at line 10. The reason the values seem whacky is that the child and
+parent process have their own copy of the stack so they are not modifying the same value of
+x, but rather there own copy of x.
+
+8.14
+output:
+
+hello
+hello
+hello
+
+The reason 3 hellos print out is because in doit, a child process is created, then that child
+process creates another child process in the if statement and both the parent and child 
+print hello and exit (2 hellos). When control returns to the main function, the parent
+process prints hello while the child process's are already terminated and
+don't print. This results in 3 hellos being printed.
+
+8.16:
+Output:
+counter = 2
+
+The output will be the original counter value + 1. Although the parent process decrements
+the global counter variable it has no effect on the child process counter variable. As I 
+stated previously, each process has there own stack with there own variables. Thus the 
+parent process only decrements its own copy of counter, while the child process counter 
+variable remains the same.
+
+8.23:
+
+The reason for the innacurate count is due to the fact that multiple child process's can
+send the SIGUSR2 command at the same time, causing the handler to only increment the counter
+once even though it was called multiple times. This occurs because the signal handler can
+only handle one signal at a time, if a new signal is sent while the handler is processing,
+then that signal will be discarded.
+
+

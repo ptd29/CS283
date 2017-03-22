@@ -1,0 +1,23 @@
+# Run 'make', then 'touch one.h' and 'make' again.
+
+CC=cc # variable holding the cc compile command
+
+all: one # runs all builds
+
+one: one.o main.o two.o three.o # command dependencies 
+	${CC} one.o main.o two.o three.o -o one # compile program one command
+
+one.o: ext.h one.h one.c # command dependencies
+	${CC} -c one.c  #compile one.c command
+
+main.o: ext.h one.h main.c # command dependencies
+	${CC} -c main.c #compile main.c
+
+two.o: one.h two.c # command dependencies
+	${CC} -c two.c #compile two.c
+
+three.o: one.h three.c # command dependencies
+	${CC} -c three.c #compie three.c
+
+clean: # clean command
+	rm -f one *.o   # removes all .o files and compiled one file

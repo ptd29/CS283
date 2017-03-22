@@ -1,0 +1,25 @@
+jpg77@tux5:~/systems_cs_283/project/L4$ ./server 6363
+Connection accepted
+looplooplooploopStart / found
+copying char
+loopcopying char
+loopcopying char
+loopcopying char
+loopcopying char
+loopcopying char
+loopcopying char
+loopcopying char
+loopcopying char
+loopcopying char
+looploopRequested page: index.html
+File type set
+Header created
+Header response written: HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 140
+
+
+
+Content served
+Connection closed
+

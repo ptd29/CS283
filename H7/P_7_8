@@ -1,0 +1,61 @@
+Jason Gallagher
+Homework 7
+Problem 7.8
+
+A:
+    A. /* Module 1 */
+    int main()
+    {
+    }
+    /* Module 2 */
+    static int main=1;
+    int p2()
+    {
+    }
+
+    Module 1 declares function main, this makes it a weak symbol
+    Module 2 declares and defines the main variable as well making it a strong
+    symbol.
+    One strong symbol takes precedent rule 2.
+    (a) REF(main.1) --> DEF(main.2)
+    (b) REF(main.2) --> DEF(main.2)
+
+B:
+    /* Module 1 */
+    int x;
+    void main()
+    {
+    }
+    /* Module 2 */
+    double x;
+    int p2()
+    {
+    }
+
+    Module 1 declares but does not initialize int x making it a weak variable
+    Module 2 declares but does not initialize double x, making it a weak
+    variable as well
+
+    This applies Rule 3 which means that one definition of x is used potentially
+    leading to unexpected results.
+
+    (a) REF(x.1) --> DEF(UNKNOWN (Rule 3))
+    (b) REF(x.2) --> DEF(UNKNOWN (Rule 3))
+
+C:
+   /* Module 1 */
+   int x=1;
+   void main()
+   {
+   }
+   /* Module 2 */
+   double x=1.0;
+   int p2()
+   {
+   }
+
+    Module 1 declares and defines int x making it a strong variable
+    Module 2 declares and defines double x making it a strong variable
+
+    (a) REF(x.1) --> DEF(ERROR (Rule 1))
+    (b) REF(x.2) --> DEF(ERROR (Rule 1))

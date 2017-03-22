@@ -1,0 +1,33 @@
+Jason Gallagher
+CS 283 - Systems programming
+Lab 4 - HTTP Server and Client
+
+To build:
+    make all
+
+To clean:
+    make clean
+
+To run client:
+    ./client <host address> <port> <file>
+    ie: ./client google.com 80 index.html
+
+To run server:
+    ./server <port>
+    ie: ./server 6363
+
+Program description: This assignment consisted of two programs, an http client and an http
+server.
+
+The http client makes a web request to the ip address at the given port number
+for the requested page name. The program then displays the contents of the response to the
+console and terminates.
+
+The http server takes in a port number as the command line argument. A socket is then
+openned to listen for incoming requests. When a request is received, a connection is
+then made with the client. The program then reads the request and attempts to find the
+requested file and if it is found the server creates a response header and sends the
+requested document contents back to the client.
+
+Sample outputs for the client and server runs can be found in
+client_output.txt and server_output.txt.

@@ -1,0 +1,26 @@
+Jason Gallagher
+Lab 3
+CS-283: Systems programming
+
+To build:
+    make all
+To run:
+    make run
+To run tests:
+    First:
+        make prep_test
+        /* Places test files in directories a and b /*
+    Second:
+        make run
+        /* Runs tests */
+
+Program Description:
+This program takes in two arguments that are the paths to two directories. These two
+directories then have their files compared. If a file exists in directory a but not in
+directory b then the file is copied to folder b. On the other hand, if a file exists in 
+directory b but not in directory a, then that file is deleted. Finally, if a file exists
+in both directories, then the most up to date file (by last modified timestamp) replaces
+the older file.
+
+Other notes:
+File permissions are maintained when missing files in b are created

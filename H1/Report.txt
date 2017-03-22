@@ -1,0 +1,42 @@
+Jason Gallagher
+CS 283
+Homework 1
+
+To Build Programs:
+make
+
+To Clean:
+make clean
+
+This assignment consists of three programs:
+
+Problem 1: This program takes in a command line argument with the file to
+be read in. By default if no arguments are given the application will
+attempt to open test.txt for reading.
+
+Once opening the file, the contents are read into a stack object I defined
+using the push function I wrote. After all lines are read into the stack
+each line of text is popped out of the stack and printed thus printing the
+contents in reverse oreder.
+
+Problem 2: This program reads in an integer from the command line and 
+prints out the binary representation of the integer value. The argument
+must be between an integer in the range of 0 and 4294967295.
+
+The program works by taking in the command line argument and converting
+it to an unsigned integer which has the ability of holding the values
+specified above. The entered value is then evaluated for all powers of
+2 between 0 and 31. When the entered value is greater then the power of
+2 then it is decremented and a 1 is printed to the console, otherwise a 
+zero is printed.
+
+Problem 3: This program calculates the size of an unsigned long variable
+in c without using any system commands.
+
+To acheive this, I created a long integer array of length 2. Then
+I created a pointer to the first value of the array and stored its address.
+I then incremented the pointer, thus making it point to the next element in
+the array, and stored the new address. Finally I found the difference
+between the two addresses which was the size of a long int.
+
+

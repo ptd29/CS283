@@ -1,0 +1,15 @@
+PROG=	test    #program name in variable
+OBJS=	one.o main.o two.o three.o  #dependencies
+CFLAGS=	-Wall -g    #commented out arguments
+
+all: ${PROG}    #build all runs program target
+
+${PROG}: ${OBJS}    #test depends on dependencies
+	@echo $@ depends on $?  #echo dependencies
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG} #compile program 
+
+%.o: %.c ext.h one.h    # object file target runs when .c files change or ext.h or one.h changes
+	$(CC) -c $(CFLAGS) -o $@ $< #compile 
+
+clean:  #clean
+	rm -f ${PROG} ${OBJS} # remove program and object files

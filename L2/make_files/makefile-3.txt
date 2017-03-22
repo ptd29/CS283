@@ -1,0 +1,13 @@
+PROG=	test    #variable holding program name test
+OBJS=	one.o main.o two.o three.o  #dependencies
+
+#CFLAGS=	-Wall -g #arguments commented out
+
+all: ${PROG}    #build all depends on program
+
+${PROG}: ${OBJS}    # program depends on objects
+	@echo $@ depends on $?  #echo depndencies
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG} #compile test program
+
+clean:  #clean command
+	rm -f ls *.o    # rmeove object files

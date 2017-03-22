@@ -1,0 +1,21 @@
+jpg77@tux5:~/systems_cs_283/project/L4$ ./client tux5.cs.drexel.edu 6363 index.html
+GET /index.html HTTP/1.1
+Host: tux5.cs.drexel.edu:6363
+
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 140
+
+
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body>
+    <span> You have requested the first file on my first c server!!! </span>
+    </body>
+
+    </html>
+

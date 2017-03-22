@@ -1,0 +1,123 @@
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ valgrind --leak-check=yes ./v00
+==15568== Memcheck, a memory error detector
+==15568== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==15568== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==15568== Command: ./v00
+==15568==
+==15568== Invalid write of size 4
+==15568==    at 0x400544: f (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15568==    by 0x40055A: main (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15568==  Address 0x5203068 is 0 bytes after a block of size 40 alloc'd
+==15568==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15568==    by 0x400537: f (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15568==    by 0x40055A: main (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15568==
+==15568==
+==15568== HEAP SUMMARY:
+==15568==     in use at exit: 40 bytes in 1 blocks
+==15568==   total heap usage: 1 allocs, 0 frees, 40 bytes allocated
+==15568==
+==15568== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==15568==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15568==    by 0x400537: f (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15568==    by 0x40055A: main (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15568==
+==15568== LEAK SUMMARY:
+==15568==    definitely lost: 40 bytes in 1 blocks
+==15568==    indirectly lost: 0 bytes in 0 blocks
+==15568==      possibly lost: 0 bytes in 0 blocks
+==15568==    still reachable: 0 bytes in 0 blocks
+==15568==         suppressed: 0 bytes in 0 blocks
+==15568==
+==15568== For counts of detected and suppressed errors, rerun with: -v
+==15568== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ vim
+compile.txt   v00.c         v06.c
+v00           v05.c         valgring.zip
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ vim v00.c
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ valgrind --leak-check=yes ./v00
+==15859== Memcheck, a memory error detector
+==15859== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==15859== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==15859== Command: ./v00
+==15859==
+==15859== Invalid write of size 4
+==15859==    at 0x400544: f (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15859==    by 0x40055A: main (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15859==  Address 0x5203068 is 0 bytes after a block of size 40 alloc'd
+==15859==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15859==    by 0x400537: f (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15859==    by 0x40055A: main (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15859==
+==15859==
+==15859== HEAP SUMMARY:
+==15859==     in use at exit: 40 bytes in 1 blocks
+==15859==   total heap usage: 1 allocs, 0 frees, 40 bytes allocated
+==15859==
+==15859== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==15859==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15859==    by 0x400537: f (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15859==    by 0x40055A: main (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==15859==
+==15859== LEAK SUMMARY:
+==15859==    definitely lost: 40 bytes in 1 blocks
+==15859==    indirectly lost: 0 bytes in 0 blocks
+==15859==      possibly lost: 0 bytes in 0 blocks
+==15859==    still reachable: 0 bytes in 0 blocks
+==15859==         suppressed: 0 bytes in 0 blocks
+==15859==
+==15859== For counts of detected and suppressed errors, rerun with: -v
+==15859== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ gcc -o v00 V00.c
+gcc: error: V00.c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ ls -la
+total 32
+drwxrwxr-x  2 jpg77 jpg77   89 Jan 27 12:49 .
+drwxrwxr-x  5 jpg77 jpg77   62 Jan 26 19:58 ..
+-rw-rw-r--  1 jpg77 jpg77  173 Jan  3 00:23 compile.txt
+-rwxrwxr-x  1 jpg77 jpg77 8632 Jan 27 12:48 v00
+-rw-rw-r--+ 1 jpg77 jpg77  156 Jan 27 12:49 v00.c
+-rw-rw-r--  1 jpg77 jpg77  118 Nov 16  2014 v05.c
+-rw-rw-r--  1 jpg77 jpg77  156 Nov 16  2014 v06.c
+-rw-rw-r--  1 jpg77 jpg77  967 Jan 26 19:47 valgring.zip
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ gcc -o v00 V00.c
+gcc: error: V00.c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ ls -la
+total 32
+drwxrwxr-x  2 jpg77 jpg77   89 Jan 27 12:49 .
+drwxrwxr-x  5 jpg77 jpg77   62 Jan 26 19:58 ..
+-rw-rw-r--  1 jpg77 jpg77  173 Jan  3 00:23 compile.txt
+-rwxrwxr-x  1 jpg77 jpg77 8632 Jan 27 12:48 v00
+-rw-rw-r--+ 1 jpg77 jpg77  156 Jan 27 12:49 v00.c
+-rw-rw-r--  1 jpg77 jpg77  118 Nov 16  2014 v05.c
+-rw-rw-r--  1 jpg77 jpg77  156 Nov 16  2014 v06.c
+-rw-rw-r--  1 jpg77 jpg77  967 Jan 26 19:47 valgring.zip
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ gcc -o v00 v00.c
+jpg77@tux2:~/systems_cs_283/L2/valgrind$ valgrind --leak-check=yes ./v00
+==16036== Memcheck, a memory error detector
+==16036== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==16036== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==16036== Command: ./v00
+==16036==
+==16036== Invalid write of size 4
+==16036==    at 0x400584: f (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==16036==    by 0x4005A6: main (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==16036==  Address 0x5203068 is 0 bytes after a block of size 40 alloc'd
+==16036==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16036==    by 0x400577: f (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==16036==    by 0x4005A6: main (in /home/jpg77/systems_cs_283/L2/valgrind/v00)
+==16036==
+==16036==
+==16036== HEAP SUMMARY:
+==16036==     in use at exit: 0 bytes in 0 blocks
+==16036==   total heap usage: 1 allocs, 1 frees, 40 bytes allocated
+==16036==
+==16036== All heap blocks were freed -- no leaks are possible
+==16036==
+==16036== For counts of detected and suppressed errors, rerun with: -v
+==16036== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+

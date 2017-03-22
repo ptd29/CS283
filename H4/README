@@ -1,0 +1,27 @@
+Jason Gallagher
+CS 283 - Systems Programming
+Homework 4
+
+To build:
+    make all
+
+To run:
+    ./file_replace <search_string> <replacement_string> <prepend_string>
+
+This progam searches all files in the directory testdir using the three input strings
+that are passed in as command line arguments. While searching the files, the program
+searchs for the search_string parameter within the file. If this string is found it is
+replaced with the replacement_string. However, if the string is not found, it will be
+prepended to any occurrences of the third arguemtn, prepend_string.
+
+
+Program Design:
+The way I went about writing this program was to first search and replace any instances
+of the search string. I did this by creating a temporary file which I would write to
+and replace all occurences of the string. If no occurences were found, this file would then
+be re-oppened and all occurences of the prepend_string will be read from the temporary file
+and the original file will be truncated and written with the updated text in a similar
+fashion to the writes to the temporary file. On the other hand, if the search_string was
+found in the original file, the contents of the temporary file are just coppied back
+to the original file.
+

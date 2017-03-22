@@ -1,0 +1,38 @@
+Jason Gallagher
+CS 283 - Systems programming
+HW5
+3/3/2017
+
+All programs compile with the make file:
+command: make
+
+P1:
+    program found in hello.c
+    To compile: make
+    To run: ./hello <number_of_threads>
+
+P2: Csapp 12.17:
+
+To run: ./buggy
+
+A: The reason the buggy program does not print the hello world statement is that the
+child thread is put to sleep right away. This gives the parent thread time to complete
+execution and terminate, thus not allowing the child thread to print.
+
+B: This can be fixed by joining the child thread with the parent thread so that the 
+parent thread waits for the child thread to continue before exiting. This can also be fixed
+by calling pthread_exit() instead of exit(0).
+
+P3:
+    I created a argument structure to hold the task id, sum, and string message that each
+thread needs to print. These parameters were initialized and then passed in to the
+HelloCreate function during the pthread create loop.
+
+To Run: ./hello-hw
+
+P4:
+    I updated the code so each thread sums up a portion of the two vectors. When the partial
+sums are done being calculated, the threads are joined and the partial sums are summed
+to get the final result.
+
+To Run: ./dotpr-hw

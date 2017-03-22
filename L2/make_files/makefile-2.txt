@@ -1,0 +1,15 @@
+PROG=	test    #variable holding string test
+OBJS=	one.o main.o two.o three.o  #variable holding dependencies
+CFLAGS=	-Wall -g    # variable holding compile arguments
+
+all: ${PROG}    #build all depends on test
+
+${PROG}: ${OBJS}    #command test depends on dependencies in OBJS
+	@echo $@ depends on $?  #sys command echos dependencies
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG} #compile program test
+
+.c.o:   # .c.o command
+	$(CC) -c $(CFLAGS) -o $@ $< #recompile if any .c or .o files change in directory
+	
+clean:  #clean command
+	rm -f ${PROG} ${OBJS}  # remove compiled programs and .o object files 

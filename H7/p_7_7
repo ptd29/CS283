@@ -1,0 +1,9 @@
+Question: 
+Without changing any variable names, modify bar5.c on page 666 so that foo5.c
+prints the correct values of x and y (i.e., the hex representations of integers 15213
+and 15212).
+
+
+Solution:
+See bar5.c
+
